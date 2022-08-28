@@ -9,7 +9,11 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
+        <link rel="stylesheet" href="{{ asset('/css/trix.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+        <link rel="stylesheet" href="{{ asset('css/chat.css') }}">
+        @trixassets
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -40,5 +44,9 @@
         @stack('modals')
 
         @livewireScripts
+        <script src="{{ asset('js/trix.js') }}"></script>
+    <script src="{{ asset('js/attachments.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="{{ url('/js/socket.js') }}"></script>
     </body>
 </html>

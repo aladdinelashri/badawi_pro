@@ -34,12 +34,21 @@ Route::middleware([
 ])->group(function () {
 
     Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => 'is_admin'], function () {
-       
+
         Route::get('/roles', function () {
             return view('admin/roles');
         });
         Route::get('/users', function () {
             return view('admin/users');
+        });
+        Route::get('/pages', function () {
+            return view('admin/pages');
+        });
+        Route::get('/customers', function () {
+            return view('admin/customers');
+        });
+        Route::get('/suppliers', function () {
+            return view('admin/suppliers');
         });
     });
 
@@ -50,6 +59,8 @@ Route::middleware([
         });
     });
 
-
+    Route::get('/trix', 'TrixController@index');
+    Route::post('/upload', 'TrixController@upload');
+    Route::post('/store', 'TrixController@store');
 });
 

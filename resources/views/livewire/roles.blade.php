@@ -47,7 +47,7 @@
                                 <td class="px-6 py-4 text-sm whitespace-no-wrap" colspan="4">No Results Found</td>
                             </tr>
                         @endif
-                       
+
                     </tbody>
                 </table>
 
@@ -73,14 +73,15 @@
                 @error('name') <span class="error">{{ $message }}</span> @enderror
             </div>
 
+
+
             <div class="mt-4">
                 <x-jet-label for="note" value="{{ __('note') }}" />
                 <x-jet-input id="note" class="block mt-1 w-full" type="text" wire:model.debounce.800ms="note" />
                 @error('note') <span class="error">{{ $message }}</span> @enderror
             </div>
-   
-            
-      
+
+
         </x-slot>
 
         <x-slot name="footer">
